@@ -125,9 +125,9 @@ body {
 }
 
 .six .hat {
-  position: absolute;
-  top: -65px;
-  left: -50px;
+  position: relative;
+  top: -350px;
+  left: -85px;
   width: 70px;
   transform: rotate(-45deg);
   z-index: 2;
@@ -245,25 +245,25 @@ body {
 /* Media Queries */
 @media screen and (max-height: 1000px) {
   .six .hat {
-    left: 40%;
+    left: -35px;
   }
 }
 
 @media screen and (max-height: 800px) {
   .six .hat {
-    left: 37%;
+    left: -35px;
   }
 }
 
 @media screen and (max-height: 700px) {
   .six .hat {
-    left: 32%;
+    left: -35px;
   }
 }
 
 @media screen and (max-height: 850px) and (max-width: 450px) {
   .six .hat {
-    left: 32%;
+    left: -35px;
   }
 }
 

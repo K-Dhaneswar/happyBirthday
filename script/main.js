@@ -66,6 +66,7 @@ profileTL
 
   .to(".profile-picture img:nth-child(15)", 1, { opacity: 1 });
 
+
 // animation timeline
 const animationTimeline = () => {
     // split chars that needs to be animated individually
@@ -93,6 +94,8 @@ const animationTimeline = () => {
         rotationY: 5,
         skewX: "-15deg"
     }
+    profileTL.pause(0);
+    gsap.set(".profile-picture img", { opacity: 0 });
 
     // timeline
     const tl = new TimelineMax();
@@ -225,7 +228,9 @@ const animationTimeline = () => {
     )
 
     .add("afterIdea6")
-    .call(()=>profileTL.play(),null,null,"afterIdea6")
+    .call(()=>{
+        profileTL.restart(true)
+    },null,null,"afterIdea6+=0.1")
 
     .from(".hat", 0.6, {
         x: -80,
@@ -284,9 +289,9 @@ const animationTimeline = () => {
     )
     .to(
         ".one, .two, .three, .four, .five, .six, .seven, .eight",
-        6,
+        3,
         { opacity: 0, pointerEvents: "none" },
-        "+=3"
+        "+=2"
     )
     .staggerFrom(".nine p", 1, ideaTextTrans, 1.2)
     .to(
@@ -300,6 +305,14 @@ const animationTimeline = () => {
     // Restart Animation on click
     const replyBtn = document.getElementById("replay");
     replyBtn.addEventListener("click", () => {
+        
+        // reset profile images
+        gsap.set(".profile-picture img", { opacity: 0 });
+
+        // reset profile timeline (do NOT play)
+        profileTL.pause(0);
+
+        // restart main animation
         tl.restart();
     });
 }
