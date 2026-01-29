@@ -247,6 +247,7 @@ const animationTimeline = () => {
         2.5,
         { opacity: 0, y: 1400 },
         { opacity: 1, y: -1000 },
+        0.2,
         "afterIdea6"
     )
     .staggerFromTo(
@@ -268,7 +269,7 @@ const animationTimeline = () => {
             opacity: 0,
             y: 10,
             skewX: "-15deg",
-        },"+=2"
+        },"+=1"
     )
     .staggerTo(
         ".eight svg",
@@ -276,7 +277,7 @@ const animationTimeline = () => {
             visibility: "visible",
             opacity: 0,
             scale: 80,
-            repeat: 5,
+            repeat: 6,
             repeatDelay: 1,
         },
         0.3
