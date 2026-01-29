@@ -289,7 +289,7 @@ const animationTimeline = () => {
     )
     .to(
         ".one, .two, .three, .four, .five, .six, .seven, .eight",
-        3,
+        2,
         { opacity: 0, pointerEvents: "none" },
         "+=2"
     )
