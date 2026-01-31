@@ -305,7 +305,7 @@ const animationTimeline = () => {
     // Restart Animation on click
     const replyBtn = document.getElementById("replay");
     replyBtn.addEventListener("click", () => {
-        
+        document.querySelector('.song').currentTime=0;
         // reset profile images
         gsap.set(".profile-picture img", { opacity: 0 });
 
